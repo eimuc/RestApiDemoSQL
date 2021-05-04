@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RestApiDemoSQL.Models;
+using RestApiDemoSQL.Repositories;
 using RestApiDemoSQL.Services;
 using System;
 using System.Collections.Generic;
@@ -13,31 +14,41 @@ namespace RestApiDemoSQL.Controllers
     [Route("[controller]")]
     public class ItemController : ControllerBase
     {
-        private readonly ItemService _itemService;
+        private readonly IItemRepository _itemRepository;
+        private readonly DiscountService _discountService;
 
-        public ItemController(ItemService itemService)
+        public ItemController(IItemRepository itemRepository, DiscountService discountService)
         {
-            _itemService = itemService;
+            _itemRepository = itemRepository;
+            _discountService = discountService;
         }
         [HttpGet]
-        public List<Item> GetAll()
+        public async Task<List<Item>> GetAll()
         {
-            return _itemService.GetAll();
+            var items = _itemRepository.GetAll();
+            items = _discountService.ApplyDiscounts(items);
+
+            return items;
+        }
+        [HttpGet("{id}")]
+        public async Task<Item> GetItem(int id)
+        {
+            return _itemRepository.GetItem(id);
         }
         [HttpPost]
-        public void AddItem(Item item)
+        public async Task AddItem(Item item)
         {
-            _itemService.AddItem(item);
+           _itemRepository.AddItem(item);
         }
         [HttpPut("{id}")]
-        public void EditItem(int id, string name)
+        public async Task EditItem(int id, string name)
         {
-            _itemService.EditItem(id, name);
+            _itemRepository.EditItem(id, name);
         }
         [HttpDelete("{id}")]
-        public void DeleteItem(int id)
+        public async Task DeleteItem(int id)
         {
-            _itemService.DeleteItem(id);
+            _itemRepository.DeleteItem(id);
         }
     }
 }

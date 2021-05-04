@@ -15,5 +15,6 @@ namespace RestApiDemoSQL.Models
         public string Name { get; set; }
         public int Price { get; set; }
         public DateTime? LastModified { get; set; }
+        public int? ApplyDiscount { get; set; }
     }
 }

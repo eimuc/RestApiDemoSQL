@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using RestApiDemoSQL.Data;
+using RestApiDemoSQL.Repositories;
 using RestApiDemoSQL.Services;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,10 @@ namespace RestApiDemoSQL
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<MainContext>(o => o.UseSqlServer(connectionString));
             services.AddControllers();
-            services.AddScoped<ItemService>();
+
+            services.AddTransient<DiscountService>();
+            services.AddScoped<IItemRepository, ItemRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestApiDemoSQL", Version = "v1" });
