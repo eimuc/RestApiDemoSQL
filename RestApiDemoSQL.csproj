@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RestApiDemoSQL.UnitTests\RestApiDemoSQL.UnitTests.csproj" />
+    <ProjectReference Include="RestApiDemoSQL.UnitTests\RestApiDemoSQL.UnitTests.csproj" />
   </ItemGroup>
 
 </Project>

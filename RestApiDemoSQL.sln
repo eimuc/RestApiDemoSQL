@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestApiDemoSQL", "RestApiDemoSQL.csproj", "{9B34119B-BF04-4D8E-BB99-9C015AE5ED75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiDemoSQL.UnitTests", "..\RestApiDemoSQL.UnitTests\RestApiDemoSQL.UnitTests.csproj", "{2A9F46CC-73AF-4C18-BDAB-38698547FEA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiDemoSQL.UnitTests", "RestApiDemoSQL.UnitTests\RestApiDemoSQL.UnitTests.csproj", "{FF82D48F-FD74-478B-8484-3EF50C8FC328}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{9B34119B-BF04-4D8E-BB99-9C015AE5ED75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B34119B-BF04-4D8E-BB99-9C015AE5ED75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B34119B-BF04-4D8E-BB99-9C015AE5ED75}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A9F46CC-73AF-4C18-BDAB-38698547FEA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A9F46CC-73AF-4C18-BDAB-38698547FEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A9F46CC-73AF-4C18-BDAB-38698547FEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A9F46CC-73AF-4C18-BDAB-38698547FEA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF82D48F-FD74-478B-8484-3EF50C8FC328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF82D48F-FD74-478B-8484-3EF50C8FC328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF82D48F-FD74-478B-8484-3EF50C8FC328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF82D48F-FD74-478B-8484-3EF50C8FC328}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
