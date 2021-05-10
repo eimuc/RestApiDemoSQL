@@ -25,14 +25,14 @@ namespace RestApiDemoSQL.Repositories
         public void DeleteItem(int id)
         {
             _context.Items.Remove(GetItem(id));
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
         }
 
         public void EditItem(int id, string name)
         {
             var item = GetItem(id);
             item.Name = name;
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
         }
 
         public List<Item> GetAll()
