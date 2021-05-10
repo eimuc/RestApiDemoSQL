@@ -1,15 +1,10 @@
 ﻿using RestApiDemoSQL.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RestApiDemoSQL.Services
 {
     public class DiscountService
     {
-
         public List<Item> ApplyDiscounts(List<Item> items)
         {
             foreach (var item in items)

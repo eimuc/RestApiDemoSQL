@@ -2,10 +2,7 @@
 using RestApiDemoSQL.Models;
 using RestApiDemoSQL.Repositories;
 using RestApiDemoSQL.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace RestApiDemoSQL.Controllers
@@ -22,6 +19,7 @@ namespace RestApiDemoSQL.Controllers
             _itemRepository = itemRepository;
             _discountService = discountService;
         }
+
         [HttpGet]
         public async Task<List<Item>> GetAll()
         {
@@ -30,21 +28,25 @@ namespace RestApiDemoSQL.Controllers
 
             return items;
         }
+
         [HttpGet("{id}")]
         public async Task<Item> GetItem(int id)
         {
             return _itemRepository.GetItem(id);
         }
+
         [HttpPost]
         public async Task AddItem(Item item)
         {
-           _itemRepository.AddItem(item);
+            _itemRepository.AddItem(item);
         }
+
         [HttpPut("{id}")]
         public async Task EditItem(int id, string name)
         {
             _itemRepository.EditItem(id, name);
         }
+
         [HttpDelete("{id}")]
         public async Task DeleteItem(int id)
         {
